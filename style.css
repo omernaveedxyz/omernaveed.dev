@@ -1,0 +1,42 @@
+html {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  inset: 0;
+}
+
+body {
+  width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  width: 4rem;
+  height: 4rem;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  img {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+}
