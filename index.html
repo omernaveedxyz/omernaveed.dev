@@ -17,20 +17,35 @@
     <img src="linkedin.png" alt="LinkedIn Profile" />
   </a>
   <script>
-    const greetings = [
-      "Hello, world",
-      "Hey there",
-      "Hi, how are you?",
-      "Greetings!",
-      "What's up?",
-      "Good day!",
-      "Howdy!",
-      "Yo!",
-      "Hiya!",
-      "Hey, friend",
-    ];
-    document.getElementsByTagName("h1")[0].innerHTML =
-      greetings[Math.floor(Math.random() * greetings.length)];
+    const header = document.getElementsByTagName("h1")[0];
+    header.innerHTML = getRandomGreeting();
+
+    setInterval(() => {
+      header.style.opacity = 0;
+      setTimeout(() => {
+        let prev, next;
+        prev = next = header.innerHTML;
+        while (prev == next) next = getRandomGreeting();
+        header.innerHTML = next;
+        header.style.opacity = 1;
+      }, 1000);
+    }, 5000);
+
+    function getRandomGreeting() {
+      const greetings = [
+        "Hello, world",
+        "Hey there",
+        "Hi, how are you?",
+        "Greetings!",
+        "What's up?",
+        "Good day!",
+        "Howdy!",
+        "Yo!",
+        "Hiya!",
+        "Hey, friend",
+      ];
+      return greetings[Math.floor(Math.random() * greetings.length)];
+    }
   </script>
 </body>
 
