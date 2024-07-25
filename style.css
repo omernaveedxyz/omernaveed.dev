@@ -6,7 +6,6 @@ html {
 }
 
 body {
-  width: 20rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
